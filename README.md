@@ -30,7 +30,8 @@
 2) entry on project and run it
 
 ```bash
-~$ python3 location-status-editor ../test ../pattern.yml
+~$ cd ~/auto-structure
+~$ python3 auto.py location-status-editor ../test ../pattern.yml
 * location-status-editor (✅)
 | -- * services (✅)
 | -- location-status-editor-services.module.js (✅)
