@@ -28,7 +28,6 @@ def create_file(path, name, format, indent):
 
 
 def main(name, path, structure, indent=""):
-  print()
   for format in structure:
     if 'dir' in format:
       dir_created = create_folder(path, name, format, indent)
