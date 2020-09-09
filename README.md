@@ -2,11 +2,57 @@
 
 #### Example:
 
-1. create the yaml file with the structure of your proyect.
-(image).
+1) Yaml file of structur project:
 
-2. entry to the project (auto) and run it.
+```yaml
+# pattern.yml
+- dir:
+  contents:
+    - dir:
+      name: services
+      contents:
+        - file:
+          prefix: "-"
+          ext: services.module.js
+        - file:
+          prefix: "-"
+          ext: services.service.js
+    - file:
+      ext: component.js
+    - file:
+      ext: module.js
+    - file:
+      ext: scss
+    - file:
+      ext: tmpl.html
+```
 
-params: python3 auto.py name_files_and_principal_dir path_when_create_project path_of_scheme_yaml
+2) entry on project and run it
 
-Example
+```bash
+~$ python3 location-status-editor ../test ../pattern.yml
+* location-status-editor (✅)
+| -- * services (✅)
+| -- location-status-editor-services.module.js (✅)
+| -- location-status-editor-services.service.js (✅)
+| -- location-status-editor.component.js (✅)
+| -- location-status-editor.module.js (✅)
+| -- location-status-editor.scss (✅)
+| -- location-status-editor.tmpl.html (✅)
+```
+
+3) result:
+```bash
+~$ tree test/
+test
+└── location-status-editor
+    ├── location-status-editor.component.js
+    ├── location-status-editor.module.js
+    ├── location-status-editor.scss
+    ├── location-status-editor.tmpl.html
+    └── services
+        ├── location-status-editor-services.module.js
+        └── location-status-editor-services.service.js
+└── patter.yml
+2 directories, 6 files
+```
